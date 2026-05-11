@@ -1,0 +1,183 @@
+.ChatWindow {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.ChatWindow-inner {
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 28px 24px 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ChatWindow-empty {
+    position: relative;
+    margin: 12vh auto 0 auto;
+    max-width: 480px;
+    padding: 32px 24px;
+    text-align: center;
+    animation: fadeSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.ChatWindow-empty-glow {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 320px;
+    height: 320px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ChatWindow-empty-icon {
+    /* Use the liquid morph avatar styles but constrain size for empty state */
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bubbleIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.ChatWindow-empty-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(180deg, #ffffff, #a1a1aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.ChatWindow-empty-sub {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Typing indicator */
+.ChatWindow-typing {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    animation: bubbleIn 0.32s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.ChatWindow-typing-avatar {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-cyan));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 14px var(--accent-glow);
+    margin-bottom: 4px;
+}
+
+.ChatWindow-typing-avatar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: #ffffff;
+    transform: rotate(45deg);
+}
+
+.ChatWindow-typing-bubble {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    border-bottom-left-radius: 4px;
+    box-shadow: var(--shadow-card);
+}
+
+.ChatWindow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    animation: typingBounce 1.2s infinite ease-in-out;
+}
+
+.ChatWindow-dot:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.ChatWindow-dot:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@media (max-width: 540px) {
+    .ChatWindow-inner {
+        padding: 20px 14px 24px 14px;
+    }
+    .ChatWindow-empty-title {
+        font-size: 20px;
+    }
+}
+
+/* Liquid morph AI avatar (copied from MessageBubble.css) */
+.liquid-morph-ai {
+    width: 45px;
+    height: 45px;
+
+    /* Gradient gives the liquid look */
+    background: linear-gradient(135deg, #5ee7df, #b490f5);
+
+    /* Makes it look soft and glowing */
+    box-shadow: 0 8px 35px rgba(94, 231, 223, 0.35);
+
+    /* This is the animation that changes the shape */
+    animation: liquid-morph 5s ease-in-out infinite;
+
+    /* Centers the content inside */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+}
+
+.liquid-morph-ai__inner {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* This is the real liquid morph logic */
+@keyframes liquid-morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    50% {
+        border-radius: 50% 60% 30% 60% / 40% 40% 70% 60%;
+    }
+
+    75% {
+        border-radius: 60% 40% 60% 30% / 60% 70% 40% 50%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}

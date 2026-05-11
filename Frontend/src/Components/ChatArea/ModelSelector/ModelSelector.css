@@ -1,0 +1,93 @@
+.ModelSelector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.ModelSelector-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-align: left;
+    transition: var(--transition);
+    overflow: hidden;
+    animation: fadeSlideUp 0.32s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.ModelSelector-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 60%);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.ModelSelector-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+}
+
+.ModelSelector-card.is-selected {
+    border-color: var(--accent);
+    background: rgba(37, 99, 235, 0.08);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.ModelSelector-card.is-selected::before {
+    opacity: 1;
+}
+
+.ModelSelector-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.ModelSelector-card-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+.ModelSelector-card-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 999px;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.ModelSelector-card-desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+.ModelSelector-card-id {
+    margin-top: 2px;
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 540px) {
+    .ModelSelector {
+        grid-template-columns: 1fr;
+    }
+}
