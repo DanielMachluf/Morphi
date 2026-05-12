@@ -1,0 +1,492 @@
+{
+  "info": {
+    "_postman_id": "6438c9c6-227b-41b0-abaf-52ddfee68357",
+    "name": "AI Chat REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51856878",
+    "_collection_link": "https://go.postman.co/collection/51856878-6438c9c6-227b-41b0-abaf-52ddfee68357?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Personas",
+      "item": [
+        {
+          "name": "Get Personas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/api/personas",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "personas"
+              ]
+            },
+            "description": "Retrieve list of personas"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Persona by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/api/personas/{{id}}",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "personas",
+                "{{id}}"
+              ]
+            },
+            "description": "Retrieve a single persona by id (path variable id example: 123)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Persona",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Updated Persona\",\"system_prompt\":\"Updated prompt.\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/personas/{{id}}",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "personas",
+                "{{id}}"
+              ]
+            },
+            "description": "Update an existing persona by id (example id: 123)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Persona",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/api/personas/{{id}}",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "personas",
+                "{{id}}"
+              ]
+            },
+            "description": "Delete a persona by id (example id: 123)"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Persona",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Example Persona\",\"system_prompt\":\"You are a helpful assistant for gaming.\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/personas",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "personas"
+              ]
+            },
+            "description": "Create a new persona"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Conversations",
+      "item": [
+        {
+          "name": "Get Conversations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/api/conversations",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations"
+              ]
+            },
+            "description": "Retrieve list of conversations"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Conversation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"persona_id\":2,\"model\":\"gpt-4o\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/conversations",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations"
+              ]
+            },
+            "description": "Create a new conversation"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Conversation by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/api/conversations/{{id}}",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{{id}}"
+              ]
+            },
+            "description": "Retrieve a single conversation by id (example id: 456)"
+          },
+          "response": []
+        },
+        {
+          "name": "Archive Conversation",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/api/conversations/{{id}}/archive",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{{id}}",
+                "archive"
+              ]
+            },
+            "description": "Archive a conversation by id (example id: 456)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Conversation Title",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"new_title\":\"my second convarsation\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/conversations/{{id}}/title",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{{id}}",
+                "title"
+              ]
+            },
+            "description": "Update the title of a conversation by id (example id: 456)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Conversation",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "{{localhost}}/api/conversations/{{id}}",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{{id}}"
+              ]
+            },
+            "description": "Delete a conversation by id (conversations_controller.py)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "item": [
+        {
+          "name": "Get Conversation Messages",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "{{localhost}}/api/conversations/{{id}}/messages",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{{id}}",
+                "messages"
+              ]
+            },
+            "description": "Get messages for a conversation (messages_controller.py)"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"content\": \"do you remember the cv i gave you ? what were they about?\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/conversations/{{id}}/messages",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                "{{id}}",
+                "messages"
+              ]
+            },
+            "description": "Create a message in a conversation — body: { \"content\" } (messages_controller.py)"
+          },
+          "response": []
+        },
+        {
+          "name": "Send Files message",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "ced36099-f47c-429c-8289-ec83a28fc4af",
+                  "src": "/Users/danielmachluf/Music/Music/Media.localized/Music/Unknown Artist/Unknown Album/audio.textToSpeech.mp3"
+                },
+                {
+                  "key": "file_type",
+                  "value": "voice",
+                  "type": "text",
+                  "uuid": "a6874d48-f7a2-44b3-af0b-dd3f4c810725"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{localhost}}/api/conversations/:conversation_id/messages/file",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "conversations",
+                ":conversation_id",
+                "messages",
+                "file"
+              ],
+              "variable": [
+                {
+                  "key": "conversation_id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GPT",
+      "item": [
+        {
+          "name": "GPT Complete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"model\": \"gpt-4\", \"messages\": [{ \"role\": \"user\", \"content\": \"<content>\" }] }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/gpt/complete",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "gpt",
+                "complete"
+              ]
+            },
+            "description": "OpenAI-style completion endpoint (gpt_controller.py)"
+          },
+          "response": []
+        },
+        {
+          "name": "GPT Generate Title",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"first_user_message\": \"<first message>\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/gpt/generate-title",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "gpt",
+                "generate-title"
+              ]
+            },
+            "description": "Generate title from first user message (gpt_controller.py)"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
