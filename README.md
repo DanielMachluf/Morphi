@@ -1,7 +1,7 @@
 # Morphi
 
 <p align="center">
-  <img src="src/assets/Screenshots/SimpleChat.png" alt="Morphi chat interface" width="100%" />
+  <img src="Frontend/src/assets/Screenshots/SimpleChat.png" alt="Morphi chat interface" width="100%" />
 </p>
 
 <p align="center">
@@ -27,15 +27,15 @@ The product experience is intentionally close to a modern premium AI workspace: 
 
 ### AI Conversation
 
-<img src="src/assets/Screenshots/SimpleChat.png" alt="Morphi simple chat conversation" width="100%" />
+<img src="Frontend/src/assets/Screenshots/SimpleChat.png" alt="Morphi simple chat conversation" width="100%" />
 
 ### Persona + Model Setup
 
-<img src="src/assets/Screenshots/StartNewChat.png" alt="Morphi new chat modal with persona and model selection" width="100%" />
+<img src="Frontend/src/assets/Screenshots/StartNewChat.png" alt="Morphi new chat modal with persona and model selection" width="100%" />
 
 ### Image Analysis
 
-<img src="src/assets/Screenshots/ImgAnalayze.png" alt="Morphi image analysis chat" width="100%" />
+<img src="Frontend/src/assets/Screenshots/ImgAnalayze.png" alt="Morphi image analysis chat" width="100%" />
 
 ## Highlights
 
