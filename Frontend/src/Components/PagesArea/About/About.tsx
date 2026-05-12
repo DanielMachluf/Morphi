@@ -220,7 +220,7 @@ export function About() {
                         <Reveal delay={80}>
                             <div className="About-contact">
                                 <a
-                                    href="https://github.com/"
+                                    href="https://github.com/DanielMachluf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="About-contact-btn"
@@ -229,7 +229,7 @@ export function About() {
                                     <span>GitHub</span>
                                 </a>
                                 <a
-                                    href="https://www.linkedin.com/"
+                                    href="https://www.linkedin.com/in/daniel-machluf/?skipRedirect=true"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="About-contact-btn"
