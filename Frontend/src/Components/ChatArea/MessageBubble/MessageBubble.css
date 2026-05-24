@@ -314,6 +314,82 @@
     opacity: 1;
 }
 
+/* ── Copy button ─────────────────────────────────────── */
+
+.MessageBubble-copy {
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.18s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.MessageBubble-inner:hover .MessageBubble-copy {
+    opacity: 1;
+}
+
+.MessageBubble-copy:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text-primary);
+    transform: scale(1.08);
+}
+
+.MessageBubble--user .MessageBubble-copy {
+    color: var(--text-muted);
+}
+
+.MessageBubble--user .MessageBubble-copy:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+.MessageBubble-copy.is-copied {
+    opacity: 1;
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.35);
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.MessageBubble-copy-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+}
+
+.MessageBubble-copy-icon--default {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.MessageBubble-copy-icon--check {
+    opacity: 0;
+    transform: scale(0.6);
+}
+
+.MessageBubble-copy.is-copied .MessageBubble-copy-icon--default {
+    opacity: 0;
+    transform: scale(0.6);
+}
+
+.MessageBubble-copy.is-copied .MessageBubble-copy-icon--check {
+    opacity: 1;
+    transform: scale(1);
+}
+
 @keyframes cursorBlink {
     0%, 100% {
         opacity: 0;

@@ -165,3 +165,5 @@ That split keeps the app fast for casual use while preserving advanced control f
 ## Author
 
 Built by **Daniel Machluf** as a full-stack AI project.
+
+GitHub Repository: [https://github.com/DanielMachluf/Morphi](https://github.com/DanielMachluf/Morphi)

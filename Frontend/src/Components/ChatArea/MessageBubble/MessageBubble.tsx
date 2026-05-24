@@ -1,4 +1,4 @@
-import { FileText, Image as ImageIcon, Mic } from "lucide-react";
+import { Check, Copy, FileText, Image as ImageIcon, Mic } from "lucide-react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Message } from "../../../Models/Message";
@@ -37,6 +37,15 @@ export function MessageBubble({ message, isStreaming = false, showAvatar = true 
     const imageQuestion = type === "image" ? getImageQuestion(content) : "";
     const [isImageLoaded, setIsImageLoaded] = useState(false);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleCopy = () => {
+        const textToCopy = type === "image" ? imageQuestion || content : content;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 2000);
+        });
+    };
 
     useEffect(() => {
         if (!isLightboxOpen) {
@@ -169,6 +178,20 @@ export function MessageBubble({ message, isStreaming = false, showAvatar = true 
 
                     <span className="MessageBubble-time">{formatClockTime(message.created_at)}</span>
                 </div>
+
+                <button
+                    type="button"
+                    className={"MessageBubble-copy" + (isCopied ? " is-copied" : "")}
+                    onClick={handleCopy}
+                    aria-label={isCopied ? "Copied" : "Copy message"}
+                >
+                    <span className="MessageBubble-copy-icon MessageBubble-copy-icon--default">
+                        <Copy size={12} strokeWidth={2} />
+                    </span>
+                    <span className="MessageBubble-copy-icon MessageBubble-copy-icon--check">
+                        <Check size={12} strokeWidth={2.5} />
+                    </span>
+                </button>
             </div>
             {lightbox}
         </div>
