@@ -14,13 +14,13 @@ export function ChatWindow({ messages, isLoading, streamingMessageId }: ChatWind
     const bottomRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        // Auto-scroll to bottom when messages change or loading starts.
+        
         bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
     }, [messages, isLoading]);
 
     const isEmpty = messages.length === 0 && !isLoading;
 
-    // index of the last assistant message (used to show avatar only on latest AI message)
+    
     const lastAssistantIndex = (() => {
         for (let i = messages.length - 1; i >= 0; i--) {
             if ((messages[i].role || "assistant") === "assistant") return i;

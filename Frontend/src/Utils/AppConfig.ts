@@ -6,4 +6,4 @@ class AppConfig {
     public readonly gptGenerateImageUrl = `${this.gptUrl}/generate-image`;
 }
 
-export const appConfig = new AppConfig(); // Singleton
+export const appConfig = new AppConfig(); 

@@ -17,7 +17,7 @@ export function MessageInput(props: MessageInputProps) {
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const textRef = useRef<HTMLTextAreaElement | null>(null);
 
-    // Auto-resize textarea up to a max height.
+    
     useEffect(() => {
         const el = textRef.current;
         if (!el) return;

@@ -29,7 +29,7 @@ export function Chat() {
     const [streamingMessageId, setStreamingMessageId] = useState<number | null>(null);
     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
 
-    // Load conversations + personas on mount.
+    
     useEffect(() => {
         let cancelled = false;
         (async () => {
@@ -146,7 +146,7 @@ export function Chat() {
 
             if (conversationId == null) return;
 
-            // Optimistically append the user message so it appears immediately.
+            
             const userMessage = new Message({
                 conversation_id: conversationId,
                 role: "user",
@@ -194,10 +194,10 @@ export function Chat() {
                 created_at: new Date().toISOString()
             });
             setMessages((prev) => [...prev, aiReply]);
-            // Title may have updated server-side after first messages.
+            
             refreshConversations();
         } catch (err) {
-            // Roll back the optimistic user message on failure.
+            
             setMessages((prev) => prev.filter((m) => m !== optimisticUser && m.id !== assistantMessageId));
             notify.error(err);
         } finally {

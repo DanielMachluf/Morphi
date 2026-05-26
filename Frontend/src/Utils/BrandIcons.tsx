@@ -1,6 +1,6 @@
-// Brand icons not provided by lucide-react v1.x (Github, LinkedIn).
-// Kept as small dedicated components to avoid pulling in another icon library
-// just for two glyphs.
+
+
+
 
 interface BrandIconProps {
     size?: number;

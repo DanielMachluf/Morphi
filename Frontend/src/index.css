@@ -1,4 +1,4 @@
-/* Premium dark theme — Morphi */
+
 
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap");
 
@@ -54,7 +54,7 @@ body {
     overflow: hidden;
 }
 
-/* Subtle grain texture overlay across entire app */
+
 body::before {
     content: "";
     position: fixed;
@@ -65,7 +65,7 @@ body::before {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Ambient gradient backdrop */
+
 body::after {
     content: "";
     position: fixed;
@@ -116,7 +116,7 @@ h6 {
     letter-spacing: -0.02em;
 }
 
-/* Minimal scrollbars */
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -141,7 +141,7 @@ h6 {
     color: var(--text-primary);
 }
 
-/* Reusable animations */
+
 @keyframes fadeSlideUp {
     from {
         opacity: 0;

@@ -52,7 +52,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     }
 ];
 
-// Custom hook: reveals the element with a CSS class once it scrolls into view.
+
 function useInView<T extends HTMLElement>(threshold = 0.15) {
     const ref = useRef<T | null>(null);
     const [inView, setInView] = useState(false);
@@ -107,7 +107,7 @@ export function About() {
         <div className="About">
             <div className="About-scroll">
                 <div className="About-inner">
-                    {/* Hero */}
+                    {}
                     <section className="About-hero">
                         <div className="About-hero-glow" aria-hidden="true" />
                         <Reveal>
@@ -137,7 +137,7 @@ export function About() {
                         </Reveal>
                     </section>
 
-                    {/* About */}
+                    {}
                     <section className="About-section">
                         <Reveal>
                             <span className="About-section-label">About</span>
@@ -153,7 +153,7 @@ export function About() {
                         </Reveal>
                     </section>
 
-                    {/* Skills */}
+                    {}
                     <section className="About-section">
                         <Reveal>
                             <span className="About-section-label">Skills</span>
@@ -188,7 +188,7 @@ export function About() {
                         </div>
                     </section>
 
-                    {/* This Project */}
+                    {}
                     <section className="About-section">
                         <Reveal>
                             <span className="About-section-label">This project</span>
@@ -212,7 +212,7 @@ export function About() {
                         </Reveal>
                     </section>
 
-                    {/* Contact */}
+                    {}
                     <section className="About-section">
                         <Reveal>
                             <span className="About-section-label">Get in touch</span>

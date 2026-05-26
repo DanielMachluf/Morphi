@@ -39,7 +39,7 @@
 }
 
 .ChatWindow-empty-icon {
-    /* Use the liquid morph avatar styles but constrain size for empty state */
+    
     width: 45px;
     height: 45px;
     margin: 0 auto 20px auto;
@@ -64,7 +64,7 @@
     font-size: 14px;
 }
 
-/* Typing indicator */
+
 .ChatWindow-typing {
     display: flex;
     align-items: flex-end;
@@ -130,21 +130,21 @@
     }
 }
 
-/* Liquid morph AI avatar (copied from MessageBubble.css) */
+
 .liquid-morph-ai {
     width: 45px;
     height: 45px;
 
-    /* Gradient gives the liquid look */
+    
     background: linear-gradient(135deg, #5ee7df, #b490f5);
 
-    /* Makes it look soft and glowing */
+    
     box-shadow: 0 8px 35px rgba(94, 231, 223, 0.35);
 
-    /* This is the animation that changes the shape */
+    
     animation: liquid-morph 5s ease-in-out infinite;
 
-    /* Centers the content inside */
+    
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -159,7 +159,7 @@
     letter-spacing: 1px;
 }
 
-/* This is the real liquid morph logic */
+
 @keyframes liquid-morph {
     0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;

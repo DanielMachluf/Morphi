@@ -1,4 +1,4 @@
-// Format an ISO timestamp into a human-readable relative time.
+
 export function timeAgo(iso?: string): string {
     if (!iso) return "";
     const then = new Date(iso).getTime();
@@ -26,7 +26,7 @@ export function timeAgo(iso?: string): string {
     return `${Math.floor(day / 365)}y ago`;
 }
 
-// Format an ISO timestamp into a short hour:minute clock string.
+
 export function formatClockTime(iso?: string): string {
     if (!iso) return "";
     const d = new Date(iso);

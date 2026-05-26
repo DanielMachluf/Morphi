@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
-// Lightweight markdown-ish renderer used by chat bubbles.
-// Supports: fenced code blocks, inline code, **bold**, *italic*, line breaks.
-// Intentionally tiny — full markdown libs would add a lot of weight for the chat use-case.
+
+
+
 
 export function renderMarkdown(content: string): ReactNode {
     const parts: ReactNode[] = [];
@@ -30,7 +30,7 @@ export function renderMarkdown(content: string): ReactNode {
     return parts;
 }
 
-// Render inline content, isolating inline-code regions so emphasis markers inside them are preserved.
+
 function renderInline(text: string, key: string): ReactNode {
     const segments: ReactNode[] = [];
     const inlineRe = /`([^`\n]+)`/g;

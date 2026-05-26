@@ -22,7 +22,7 @@ export function NewChatModal(props: NewChatModalProps) {
     const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null);
     const [selectedModel, setSelectedModel] = useState<string>(DEFAULT_MODEL);
 
-    // Default the persona selection to the first default preset whenever the modal opens.
+    
     useEffect(() => {
         if (!open) return;
         if (personas.length === 0) {
@@ -34,7 +34,7 @@ export function NewChatModal(props: NewChatModalProps) {
         setSelectedPersona(firstDefault);
     }, [open, personas, selectedPersona]);
 
-    // Close on Escape.
+    
     useEffect(() => {
         if (!open) return;
         const onKey = (e: KeyboardEvent) => {

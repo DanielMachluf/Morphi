@@ -1,4 +1,4 @@
-import { Notyf } from "notyf"; // npm i notyf
+import { Notyf } from "notyf"; 
 
 class Notify {
 
@@ -6,7 +6,7 @@ class Notify {
         position: { x: "center", y: "top" },
         duration: 3000,
         dismissible: true,
-        ripple: true // Ripple = אדווה = גל קטן
+        ripple: true 
     });
 
     public success(message: string): void {
@@ -19,10 +19,10 @@ class Notify {
     }
 
     private extractErrorMessage(err: any): string {
-        if(typeof err === "string") return err; // String error.
-        if(typeof err?.response?.data === "string") return err.response.data; // Axios error
+        if(typeof err === "string") return err; 
+        if(typeof err?.response?.data === "string") return err.response.data; 
         if(typeof err?.response?.data?.message === "string") return err.response.data.message;
-        if(typeof err?.message === "string") return err.message; // throw new Error("...")
+        if(typeof err?.message === "string") return err.message; 
         return "Some error, please try again.";
     }
 

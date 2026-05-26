@@ -44,22 +44,22 @@
     transform: rotate(45deg);
 }
 
-/* Liquid morph AI avatar (overrides .MessageBubble-avatar when used) */
+
 .liquid-morph-ai {
     width: 45px;
     height: 45px;
 
-    /* Gradient gives the liquid look */
+    
     background: linear-gradient(135deg, #5ee7df, #b490f5);
 
-    /* Makes it look soft and glowing */
+    
     box-shadow: 0 8px 35px rgba(94, 231, 223, 0.35);
 
-    /* This is the animation that changes the shape */
+    
     animation: liquid-morph 5s ease-in-out infinite;
 }
 
-/* This is the real liquid morph logic */
+
 @keyframes liquid-morph {
     0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -314,7 +314,7 @@
     opacity: 1;
 }
 
-/* ── Copy button ─────────────────────────────────────── */
+
 
 .MessageBubble-copy {
     flex-shrink: 0;

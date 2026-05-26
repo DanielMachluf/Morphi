@@ -1,30 +1,30 @@
-from typing import Callable
-from fastapi import Request, Response
-from starlette.middleware.base import BaseHTTPMiddleware
+from typing import Callable 
+from fastapi import Request ,Response 
+from starlette .middleware .base import BaseHTTPMiddleware 
 
-# Logger middleware
-class LoggerMiddleware(BaseHTTPMiddleware):
 
-    async def dispatch(self, request: Request, call_next: Callable) -> Response:
+class LoggerMiddleware (BaseHTTPMiddleware ):
 
-        # Log method: 
-        print("Method: " + request.method)
+    async def dispatch (self ,request :Request ,call_next :Callable )->Response :
 
-        # Log route: 
-        print("Route: " + request.url.path)
 
-        # Log body if exist:
-        # body = await request.body()
-        # if body:
-        #     print("Body:")
-        #     print(body.decode())
-        try:
-            body = await request.json()
-            print("Body:", body)
-        except: pass
+        print ("Method: "+request .method )
 
-        # Continue to next middleware:
-        response = await call_next(request)
 
-        # Return the response: 
-        return response
+        print ("Route: "+request .url .path )
+
+
+
+
+
+
+        try :
+            body =await request .json ()
+            print ("Body:",body )
+        except :pass 
+
+
+        response =await call_next (request )
+
+
+        return response 
